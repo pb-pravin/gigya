@@ -7,12 +7,10 @@ describe Gigya::IdentityStorage, :vcr do
   subject(:identity_storage) { Gigya::IdentityStorage.new(client_id, client_secret) }
 
   describe 'search' do
-    let(:query) { "select * from accounts where lastUpdated < '2014-06-09T16:27:32Z'" }
+    let(:query) { 'select * from accounts where lastUpdated < "2014-06-09T16:27:32Z"' }
 
     subject(:search) { identity_storage.search(query) }
 
-    it 'returns the users infos' do
-      search
-    end
+    xit 'returns the identity storage infos'
   end
 end
