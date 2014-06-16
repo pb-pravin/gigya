@@ -18,7 +18,7 @@ module Gigya
         request.body = params
       end
 
-      JSON.parse response.body
+      Hashie::Mash.new(JSON.parse(response.body))
     end
 
     private
